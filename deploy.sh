@@ -66,6 +66,12 @@ deploy_pkg(){
 test_pkg(){
   echo "Test"
   shell_log "Test"
+  STATUS=$(curl -s --head http://www.baiduasdfasdfasdf.com | grep '200' | wc -l)
+  if [ $STATUS = 1 ];then
+      echo "OK"
+  else
+      exit;
+  fi
 }
 
 fast_rollback(){
